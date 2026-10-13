@@ -1,0 +1,6 @@
+{
+  "name": "SleepyBaby",
+  "description": "3D jelibon tasarımlı ses mikseri, zamanlayıcı, YouTube bebek ninnileri oynatıcısı ve 7 interaktif masal kitabı.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

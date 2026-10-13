@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+@layer utilities {
+  /* Keyframes for soft elements floating */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-8px) rotate(1deg); }
+  }
+
+  @keyframes float-slow {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(-1.5deg); }
+  }
+
+  @keyframes pulse-subtle {
+    0%, 100% { transform: scale(1); opacity: 0.95; }
+    50% { transform: scale(1.03); opacity: 1; }
+  }
+
+  /* Shimmer shine animation on jelly buttons */
+  @keyframes shine {
+    100% { left: 125%; }
+  }
+
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .animate-float-slow {
+    animation: float-slow 7s ease-in-out infinite;
+  }
+
+  .animate-pulse-subtle {
+    animation: pulse-subtle 3s ease-in-out infinite;
+  }
+
+  /* Cradle Rocking Animation */
+  @keyframes cradle {
+    0%, 100% { transform: rotate(-6deg); }
+    50% { transform: rotate(6deg); }
+  }
+
+  /* Twinkling Star animation */
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.25; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1.2); }
+  }
+
+  .animate-cradle {
+    animation: cradle 3.5s ease-in-out infinite;
+    transform-origin: center center;
+  }
+
+  .animate-twinkle {
+    animation: twinkle 3s ease-in-out infinite;
+  }
+
+  /* 3D Jelly Button - Glossy, bouncy, and yummy! */
+  .jelly-btn {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background-size: 200% auto;
+    border: 2px solid rgba(255, 255, 255, 0.35);
+  }
+
+  /* Shiny gloss diagonal highlight on top half of the jelly button */
+  .jelly-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.05) 100%);
+    border-radius: 9999px 9999px 0 0;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Reflection highlights - glowing core */
+  .jelly-highlight {
+    position: absolute;
+    top: 15%;
+    left: 8%;
+    width: 12px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 50%;
+    transform: rotate(-15deg);
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  /* Interactive state squish effects */
+  .jelly-btn:active {
+    transform: translateY(4px) scale(0.96);
+  }
+
+  /* Custom Scrollbar for cute rounded feel */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+}
+
+/* Background gradient animation */
+.animated-bg {
+  background: linear-gradient(-45deg, #e0f2fe, #f0fdf4, #fae8ff, #fee2e2);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+
+.animated-bg-dark {
+  background: linear-gradient(-45deg, #050914, #0b1120, #130f1c, #0d1222);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
